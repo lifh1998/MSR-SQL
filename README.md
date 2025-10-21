@@ -1,6 +1,6 @@
 # MSR-SQL: Multi-Schema Reasoning for Text-to-SQL Framework
 
-![msrsql](.\image\msrsql.jpg)
+![msrsql](https://github.com/lifh1998/MSR-SQL/blob/main/image/msrsql.jpg)
 
 ## Abstract
 
