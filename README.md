@@ -1,5 +1,7 @@
 # MSR-SQL: Multi-Schema Reasoning for Text-to-SQL Framework
 
+![msrsql](.\image\msrsql.jpg)
+
 ## Abstract
 
 MSR-SQL (Multi-Schema Reasoning for Text-to-SQL) is an innovative dual-path collaborative reasoning framework designed to tackle the core conflict between "information completeness" and "reasoning accuracy" often faced by small open-source Large Language Models (LLMs) in complex Text-to-SQL tasks.
@@ -106,7 +108,7 @@ pip install -r requirements.txt
 
 The main logic of MSR-SQL (dual-path generation, SQL merging/selection, and execution) is executed via the pipeline script.
 
-**MSR-SQL管道流执行后的最终结果，即经过SQLMerger/Selector选择的最佳SQL查询，将保存在以下路径：`{OUTPUT_BASE_DIR}/{DATASET_NAME}/sql_results/selected_sqls.sql`。**
+The final result after the execution of the MSR-SQL pipeline flow, specifically the optimal SQL query selected by the SQLMerger/Selector, will be saved to the following path: **`{OUTPUT_BASE_DIR}/{DATASET_NAME}/sql_results/selected_sqls.sql`。**
 
 **Before running, you must modify the following parameters within `run_pipeline.sh`:**
 
@@ -141,11 +143,11 @@ This comparison allows for a direct assessment of the performance gain achieved 
 
 This script is used to evaluate results on the Spider dataset.
 
-| Parameter         | Description (描述)                                           | Example Value (示例值)                |
-| :---------------- | :----------------------------------------------------------- | :------------------------------------ |
-| `OUTPUT_BASE_DIR` | The base directory containing the pipeline output files (usually the same as used in 2.2). | `"./outputs/spider"`                  |
-| `data_mode`       | The subset of the data being evaluated (e.g., development set). | `"dev"`                               |
-| `DB_PATH`         | Path to the root directory of the Spider databases.          | `"/path/to/datasets/Spider/database"` |
+| Parameter         | Description                                              | Example Value                         |
+| :---------------- | :------------------------------------------------------- | :------------------------------------ |
+| `OUTPUT_BASE_DIR` | The base directory containing the pipeline output files. | `"./outputs/spider"`                  |
+| `data_mode`       | The subset of the data being evaluated.                  | `"dev"`                               |
+| `DB_PATH`         | Path to the root directory of the Spider databases.      | `"/path/to/datasets/Spider/database"` |
 
 **Execution Command:**
 
@@ -157,7 +159,7 @@ sh compare_spider_results.sh
 
 This script is used to evaluate results on the BIRD dataset, which requires additional difficulty information.
 
-| Parameter         | Description (描述)                                       | Example Value (示例值)                       |
+| Parameter         | Description                                              | Example Value                                |
 | :---------------- | :------------------------------------------------------- | :------------------------------------------- |
 | `OUTPUT_BASE_DIR` | The base directory containing the pipeline output files. | `"./outputs/bird"`                           |
 | `data_mode`       | The subset of the data being evaluated.                  | `"dev"`                                      |
@@ -170,4 +172,3 @@ This script is used to evaluate results on the BIRD dataset, which requires addi
 sh compare_bird_results.sh
 ```
 
-##### 
