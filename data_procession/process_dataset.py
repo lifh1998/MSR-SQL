@@ -22,11 +22,12 @@ def load_json_dataset(json_dataset):
 
     # Determine dataset type based on json_dataset path and rename columns accordingly
     if "BIRD" in json_dataset:
-        df = df.rename(columns={'SQL': 'query'})
+        if 'SQL' in df.columns:
+            df = df.rename(columns={'SQL': 'query'})
+        if 'query' not in df.columns:
+            df['query'] = "no sql."
     elif "Spider-Syn" in json_dataset:
         df = df.rename(columns={'SpiderSynQuestion': 'question'})
-    # For "Spider" dataset, no renaming is typically needed if 'question' and 'query' are already present
-
     df = df.reset_index(drop=True)
     return df
 
